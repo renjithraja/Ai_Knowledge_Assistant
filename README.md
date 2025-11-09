@@ -95,7 +95,7 @@ GROQ_API_KEY=your_groq_key
 🧾 Installation & Setup
 
 1. Clone the Repository
-git clone https://github.com/yourusername/multi_agent_knowledge_assistant.git
+git clone https://github.com/renjithraja/Ai_Knowledge_Assistant.git
 cd multi_agent_knowledge_assistant
 
 2. Create Virtual Environment
