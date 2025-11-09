@@ -1,0 +1,118 @@
+"What are the total sales figures for this year?",fact
+"List the financial highlights from the 2023 report.",fact
+"Who are the main stakeholders mentioned?",fact
+"How many employees were hired in 2023?",fact
+"What is the total revenue for 2023 according to the report?",fact
+"Provide the company’s operating profit for the last fiscal year.",fact
+"What was the overall net income for 2022?",fact
+"Give me the total production output of 2023.",fact
+"How many new branches were opened this year?",fact
+"Which departments reported the highest expenses?",fact
+"List all major projects completed in 2023.",fact
+"What is the total number of suppliers mentioned in the report?",fact
+"Who are the company’s key partners for sustainability projects?",fact
+"Identify the business segments contributing to total revenue.",fact
+"What are the top-performing regions in terms of sales?",fact
+"List the company’s product categories.",fact
+"What percentage of energy came from renewable sources?",fact
+"What are the key financial metrics reported?",fact
+"Provide total greenhouse gas emissions for 2023.",fact
+"Give the total investment in R&D.",fact
+"Summarize the sustainability initiatives from the report.",summary
+"Give me a brief overview of the key goals for 2023.",summary
+"Summarize the environmental targets discussed.",summary
+"Provide a concise summary of the report.",summary
+"Give a short overview of the main achievements.",summary
+"Summarize the key performance highlights.",summary
+"Summarize sustainability results for 2022–2023.",summary
+"Provide a short summary of community programs.",summary
+"Summarize social responsibility and inclusion initiatives.",summary
+"Summarize renewable energy adoption progress.",summary
+"Summarize the waste reduction plan results.",summary
+"Summarize employee engagement activities.",summary
+"Provide a summary of carbon emission reduction efforts.",summary
+"Summarize health and safety improvements.",summary
+"Summarize key milestones achieved in 2023.",summary
+"Give a concise summary of the water usage report.",summary
+"Summarize corporate governance initiatives.",summary
+"Summarize the company’s 2030 sustainability roadmap.",summary
+"Summarize the climate impact performance.",summary
+"Analyze the trend in carbon emissions over the past five years.",analysis
+"Compare performance metrics between 2022 and 2023.",analysis
+"Explain the relationship between sales growth and profit margin.",analysis
+"Discuss the factors affecting operational efficiency.",analysis
+"Analyze the correlation between energy use and production.",analysis
+"Discuss the long-term impact of new sustainability policies.",analysis
+"Explain how renewable energy usage affects total emissions.",analysis
+"Compare sustainability scores across regions.",analysis
+"Discuss challenges in achieving Scope 3 emission goals.",analysis
+"Evaluate progress toward 2030 environmental targets.",analysis
+"Analyze the impact of digital transformation on operations.",analysis
+"Discuss financial stability trends in 2023.",analysis
+"Explain how cost optimization influenced profits.",analysis
+"Analyze changes in water efficiency metrics.",analysis
+"Evaluate the effect of employee engagement on productivity.",analysis
+"Analyze year-over-year waste generation rates.",analysis
+"Compare the carbon intensity ratio between 2021 and 2023.",analysis
+"Discuss the efficiency improvements achieved in logistics.",analysis
+"Analyze the relationship between capital spending and emissions.",analysis
+"Describe the image showing renewable energy usage.",visual
+"What does the chart on page 4 represent?",visual
+"Explain the figure related to water consumption.",visual
+"Interpret the diagram about waste management.",visual
+"What does the image on page 6 show?",visual
+"Describe the graph illustrating revenue growth.",visual
+"Explain the infographic about carbon footprint reduction.",visual
+"Interpret the chart on sustainability metrics.",visual
+"Describe the bar chart showing emission reductions.",visual
+"Explain the pie chart depicting energy sources.",visual
+"Interpret the line graph of CO2 trends over time.",visual
+"Describe the table showing annual waste production.",visual
+"Explain the scatter plot of production vs. emissions.",visual
+"Describe the chart showing renewable electricity adoption.",visual
+"Explain the figure depicting waste segregation categories.",visual
+"Describe the infographic on water recycling.",visual
+"Explain the visual showing employee diversity by department.",visual
+"Describe the bar chart showing scope 1 and scope 2 emissions.",visual
+"Interpret the image comparing 2022 and 2023 carbon output.",visual
+"Explain the stacked chart about transportation emissions.",visual
+"What was the overall revenue in 2022?",fact
+"How much did greenhouse gas emissions decrease?",fact
+"Identify the main departments mentioned in the report.",fact
+"How many new partnerships were established?",fact
+"Who are the major clients mentioned in the 2023 report?",fact
+"List all sustainability partners mentioned.",fact
+"Which departments achieved their targets?",fact
+"What are the company’s diversity and inclusion goals?",fact
+"How many new initiatives were launched in 2023?",fact
+"Provide the total renewable electricity generated.",fact
+"Summarize key sustainability goals in 2023.",summary
+"Give me a short summary of this section.",summary
+"Briefly describe the company’s social responsibility efforts.",summary
+"Provide a concise recap of the 2023 achievements.",summary
+"Summarize employee engagement programs.",summary
+"Summarize the waste reduction objectives.",summary
+"Summarize new environmental commitments announced.",summary
+"Give an overall summary of water conservation initiatives.",summary
+"Summarize upcoming 2024 sustainability targets.",summary
+"Summarize innovation strategies highlighted in the report.",summary
+"Compare the company’s performance with last year.",analysis
+"Analyze the impact of new policies on production.",analysis
+"Explain how sustainability initiatives improved efficiency.",analysis
+"Discuss differences between 2022 and 2023 results.",analysis
+"Evaluate the company’s approach to ESG risks.",analysis
+"Analyze return on sustainability investments.",analysis
+"Discuss the potential impact of renewable projects.",analysis
+"Evaluate cost-saving measures introduced in 2023.",analysis
+"Explain productivity changes linked to automation.",analysis
+"Analyze effectiveness of environmental campaigns.",analysis
+"Describe the chart showing waste composition.",visual
+"Explain the bar graph about water usage.",visual
+"Describe the image showing water conservation progress.",visual
+"Interpret the chart about greenhouse gas intensity.",visual
+"Explain the infographic about sustainability milestones.",visual
+"Describe the diagram illustrating the energy transition.",visual
+"Explain the chart showing carbon neutrality targets.",visual
+"Interpret the heatmap showing global resource use.",visual
+"Describe the visual comparing renewable vs nonrenewable sources.",visual
+"Explain the image displaying emission reduction by region.",visual

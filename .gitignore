@@ -1,0 +1,89 @@
+# ----------------------------
+# Python and Environment Files
+# ----------------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+*.DS_Store
+*.swp
+.env
+.venv/
+myenv/
+env/
+venv/
+.idea/
+.vscode/
+*.egg-info/
+*.egg
+*.bak
+
+# ----------------------------
+# Streamlit and Cache
+# ----------------------------
+.streamlit/secrets.toml
+.streamlit/config.toml
+.streamlit/cache/
+.streamlit/logs/
+
+# ----------------------------
+# Model and Vector DB Caches
+# ----------------------------
+# Keep trained intent model, ignore large DBs
+models/chroma_db/
+models/*.bin
+models/*.pt
+models/*.h5
+models/*.npy
+!models/intent_model.pkl  # keep intent classifier
+
+# ----------------------------
+# Data Files
+# ----------------------------
+data/processed/text/
+data/processed/images/
+data/intent_data_backup.csv
+data/temp/
+*.csv~
+*.zip
+*.tar
+*.gz
+
+# Keep reports for reproducibility
+!data/reports/
+!data/intent_data.csv
+
+# ----------------------------
+# Notebooks and Checkpoints
+# ----------------------------
+*.ipynb_checkpoints
+*.checkpoint
+
+# ----------------------------
+# OS-Specific Files
+# ----------------------------
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ----------------------------
+# Build / Output / Temporary Files
+# ----------------------------
+dist/
+build/
+tmp/
+*.tmp
+*.out
+*.log
+*.cache/
+cache/
+pip-wheel-metadata/
+*.bak
+
+# ----------------------------
+# Miscellaneous
+# ----------------------------
+test_results/
+__MACOSX/
