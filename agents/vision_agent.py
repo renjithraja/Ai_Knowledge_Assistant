@@ -1,9 +1,10 @@
 """
-Handles image understanding using a Vision-Language Model (BLIP-2).
-Generates text descriptions (captions) for visual content.
+Handles basic image understanding using OpenAI CLIP.
+Generates short semantic descriptions (labels) for images.
+Lightweight and CPU-friendly, ideal for Streamlit deployment.
 """
 
-from transformers import BlipProcessor, BlipForConditionalGeneration
+from transformers import CLIPProcessor, CLIPModel
 from PIL import Image, UnidentifiedImageError
 from pathlib import Path
 import torch
@@ -12,24 +13,24 @@ import torch
 class VisionAgent:
     def __init__(self):
         """
-        Load the BLIP-2 image captioning model and processor.
-        Runs on GPU if available, otherwise on CPU.
+        Initialize the CLIP model and processor.
+        Automatically selects GPU if available, otherwise CPU.
         """
         try:
-            print("Loading BLIP-2 model (Salesforce/blip-image-captioning-base)...")
-            self.processor = BlipProcessor.from_pretrained("Salesforce/blip-image-captioning-base")
-            self.model = BlipForConditionalGeneration.from_pretrained("Salesforce/blip-image-captioning-base")
+            print("Loading CLIP model (openai/clip-vit-base-patch16)...")
+            self.model = CLIPModel.from_pretrained("openai/clip-vit-base-patch16")
+            self.processor = CLIPProcessor.from_pretrained("openai/clip-vit-base-patch16")
             self.device = "cuda" if torch.cuda.is_available() else "cpu"
             self.model.to(self.device)
             print(f"Vision model loaded successfully on {self.device.upper()}.")
         except Exception as e:
-            print(f"Model initialization failed: {e}")
+            print(f"Error initializing CLIP model: {e}")
             raise RuntimeError("VisionAgent initialization failed.")
 
     def describe_image(self, image_path):
         """
-        Generate a caption for a given image using the BLIP-2 model.
-        Safely handles missing or unreadable image files.
+        Generates a simple textual description for the given image.
+        Safely handles unreadable or missing image files.
         """
         image_path = Path(image_path)
         if not image_path.exists():
@@ -37,28 +38,43 @@ class VisionAgent:
             return "image file missing"
 
         try:
-            # Open and convert the image to RGB
+            # Attempt to open the image safely
             image = Image.open(image_path).convert("RGB")
         except (UnidentifiedImageError, OSError) as e:
             print(f"Unreadable image skipped: {image_path} ({e})")
             return "unreadable or unsupported image"
 
         try:
-            # Prepare model inputs
-            inputs = self.processor(images=image, return_tensors="pt").to(self.device)
+            # Candidate text labels to classify the image meaning
+            candidate_labels = [
+                "a photo of a chart or graph",
+                "a photo of a document page",
+                "a photo of a natural scene",
+                "a photo of a person",
+                "a photo of a diagram or infographic",
+                "a photo of a technical figure"
+            ]
 
-            # Generate caption from image features
+            # Prepare CLIP inputs (image + text)
+            inputs = self.processor(text=candidate_labels, images=image, return_tensors="pt", padding=True)
+            inputs = {k: v.to(self.device) for k, v in inputs.items()}
+
+            # Forward pass through CLIP
             with torch.no_grad():
-                output = self.model.generate(**inputs, max_new_tokens=50)
+                outputs = self.model(**inputs)
+                logits_per_image = outputs.logits_per_image
+                probs = logits_per_image.softmax(dim=1)
 
-            caption = self.processor.decode(output[0], skip_special_tokens=True).strip()
+            # Select the label with the highest probability
+            best_label = candidate_labels[probs.argmax().item()]
+            confidence = probs.max().item()
 
-            # Free memory (especially important when running on GPU)
-            del inputs, output
+            # Free memory (important on Streamlit Cloud)
+            del inputs, outputs
             torch.cuda.empty_cache()
 
-            return caption or "no caption generated"
+            return f"This image likely shows {best_label} (confidence: {confidence:.2f})."
 
         except Exception as e:
-            print(f"Caption generation failed for {image_path}: {e}")
-            return "image captioning failed"
+            print(f"Error describing image {image_path}: {e}")
+            return "image analysis failed"
