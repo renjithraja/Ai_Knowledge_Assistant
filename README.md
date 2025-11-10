@@ -17,34 +17,53 @@ It classifies user queries into intents (fact, analysis, summary, or visual) and
 The system follows a multi-agent modular design, where each agent performs a specific task:
 
 Agent	Responsibility
+
 Intent Agent	Classifies user queries into four intents – fact, summary, analysis, and visual.
+
 Retrieval Agent	Performs RAG by retrieving the most relevant text and visual data from the Chroma vector database.
+
 Vision Agent	Uses the BLIP model to describe or interpret images extracted from PDFs.
+
 Reasoning Agent	Uses an LLM (via the Groq API) to generate final, context-aware responses.
+
 Controller Agent	Orchestrates the workflow by routing the query to appropriate agents based on the intent.
 
 
 🧩 Features
 
 ✅ Intent Classification – Automatically detects the type of question (fact, analysis, summary, or visual).
+
 ✅ Multimodal RAG – Retrieves both text and image-based information from PDFs.
-✅ Visual Understanding – Interprets and describes charts, graphs, and diagrams using BLIP-2.
+
+✅ Visual Understanding – Interprets and describes charts, graphs, and diagrams using CLIP.
+
 ✅ LLM Reasoning – Generates accurate, contextual answers using Groq’s Llama model.
+
 ✅ Streamlit Chat UI – Interactive chat-like interface for user queries.
+
 ✅ Extensible Design – Easily add more PDFs, images, or custom models.
 
 
 
 🧠 Tech Stack
 Category	Tools/Frameworks
+
 Programming Language	Python 3.10+
+
 Web Framework	Streamlit
+
 LLM API	Groq (Llama 3.3 70B)
+
 VLM	CLIP (For fast, lightweight image understanding and captioning)
+
 Embeddings	SentenceTransformers (all-MiniLM-L6-v2)
+
 Vector Store	ChromaDB
+
 ML Model	Logistic Regression + TF-IDF (for Intent Classification)
+
 PDF Parsing	PyMuPDF
+
 Environment Management	python-dotenv
 
 
@@ -138,9 +157,13 @@ streamlit run app.py
 💬 Example Queries
 
 Type	Example
+
 Fact	“What was the total water-related financing provided by the EIB in 2023?”
+
 Analysis	“Compare water availability trends in 2023 and 2024.”
+
 Summary	“Summarize the key sustainability goals from the 2023 report.”
+
 Visual	“Explain the chart showing renewable water usage.”
 
 
