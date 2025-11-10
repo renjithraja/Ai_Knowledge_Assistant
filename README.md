@@ -158,7 +158,7 @@ streamlit run app.py
 
 Type	Example
 
-Fact	“What was the total water-related financing provided by the EIB in 2023?”
+Fact	“What are the key statistics about drought damage in Europe from the Water Overview 2024 report?”
 
 Analysis	“Compare water availability trends in 2023 and 2024.”
 
