@@ -40,7 +40,7 @@ Category	Tools/Frameworks
 Programming Language	Python 3.10+
 Web Framework	Streamlit
 LLM API	Groq (Llama 3.3 70B)
-VLM	BLIP-2 (Salesforce/blip-image-captioning-base)
+VLM	CLIP (For fast, lightweight image understanding and captioning)
 Embeddings	SentenceTransformers (all-MiniLM-L6-v2)
 Vector Store	ChromaDB
 ML Model	Logistic Regression + TF-IDF (for Intent Classification)
@@ -142,6 +142,8 @@ Fact	“What was the total water-related financing provided by the EIB in 2023?�
 Analysis	“Compare water availability trends in 2023 and 2024.”
 Summary	“Summarize the key sustainability goals from the 2023 report.”
 Visual	“Explain the chart showing renewable water usage.”
+
+
 🧾 Notes
 
 To add new PDFs, place them in data/reports/ and rerun init_chroma.py.
